@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.ruff_cache/
+.venv/
+.env
+
+# Node
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Builds / dists
+build/
+dist/
+*.egg-info/
+
+# Promptkit runtime outputs
+AGENTS.md
+.agent/
+
+# OS
+.DS_Store

@@ -48,3 +48,6 @@ This repo is structured to publish both:
 
 - Python package data lives in `src/promptkit_builtin_packs/` and is included via `MANIFEST.in`.
 - Node CLI reads the same pack data from `src/promptkit_builtin_packs/` to stay in sync.
+- Quality tools:
+  - Python: `uvx ruff check .`, `uvx black .`, `uvx mypy src` (deps in `optional-dependencies.dev`).
+  - Node: `npm run lint`, `npm run format`, `npm run typecheck`.
