@@ -1,55 +1,50 @@
-# execplan-installer
+# promptkit
 
-A tiny Python CLI that drops the required ExecPlan scaffolding into a repository. It writes/updates `AGENTS.md` with the ExecPlans rule and creates `.agent/PLANS.md` containing the full Codex ExecPlan specification.
+Prompt pack manager that drops AGENTS snippets and `.agent` templates into a repo. Ships with the ExecPlan pack and is ready to host more packs later.
 
-## Quick use with uvx (no install needed)
+## Quick use (no install)
 
-Run directly from GitHub via Astral's `uvx` launcher (isolated, cached venv per command):
+- Python/uvx: `uvx --from git+https://github.com/mikewong23571/promptkit.git promptkit install execplan`
+- Node/npx: `npx promptkit install execplan`
 
-```
-uvx --from git+https://github.com/mikewong23571/execplan-installer.git execplan-install
-```
+Both commands are idempotent and cache their envs. Add `-p /path/to/repo` to target another repo and `--force` to overwrite existing files.
 
-Examples:
+## Install (optional)
 
-- Target another repo root: `uvx --from git+https://github.com/mikewong23571/execplan-installer.git execplan-install -p /path/to/repo`
-- Overwrite an existing `.agent/PLANS.md`: add `--force`.
+- Python: `pip install promptkit` or `pipx install promptkit`
+- Node: `npm install -g promptkit` (or use `npx` per above)
 
-## Install locally (optional)
+## Commands (Python & Node CLIs)
 
-```
-pip install .
-```
+- `promptkit list [-p PATH]` — show available built-in packs and installed packs in PATH (default `.`)
+- `promptkit install <pack> [-p PATH] [--force]` — install/update a pack (built-in: `execplan`)
 
-Or keep it isolated with pipx:
+## Pack spec (v1)
 
-```
-pipx install .
-```
+Each pack lives under `src/promptkit_builtin_packs/<name>/` and contains:
 
-## Usage
+- `pack.json` — metadata
+  - `name`, `version`, `description`
+  - `agents_entry`: relative path to the snippet inserted into `AGENTS.md`
+  - `files`: array of `{ "source": "files/PLANS.md", "target": ".agent/PLANS.md" }`
+- `agents_snippet.md` — the text dropped into `AGENTS.md`
+- `files/` — tree of files copied to repo root respecting `target` paths
 
-Run from any repository root (defaults to current directory):
+Install metadata is recorded in `.agent/promptkit/registry.json` (per repo). `AGENTS.md` is updated inside a managed block `<!-- promptkit:start --> ... <!-- promptkit:end -->`, so multiple packs stay tidy.
 
-```
-execplan-install
-```
+## Built-in pack: execplan
 
-Options:
+- Adds the ExecPlans rule to `AGENTS.md`.
+- Writes `.agent/PLANS.md` containing the full Codex ExecPlan spec (living-plan guidance, milestones, validation, etc.).
 
-- `-p, --path PATH`  Target repo root (default: `.`).
-- `-f, --force`      Overwrite an existing `.agent/PLANS.md`.
+## Road to PyPI & npm
 
-The command is idempotent: it appends the ExecPlans section to `AGENTS.md` only if missing, and it will not overwrite `.agent/PLANS.md` unless `--force` is provided.
+This repo is structured to publish both:
 
-## What it writes
+- PyPI: package name `promptkit` exposes the Python CLI (`promptkit`). Works with `uvx promptkit ...` once published.
+- npm: package `promptkit` exposes the Node CLI (`promptkit`). Works with `npx promptkit ...`.
 
-- `AGENTS.md` gets the section:
-  
-  ````md
-  # ExecPlans
-  
-  When writing complex features or significant refactors, use an ExecPlan (as described in .agent/PLANS.md) from design to implementation.
-  ````
+## Development notes
 
-- `.agent/PLANS.md` is populated with the full ExecPlan specification so a novice contributor can read it and create living plans immediately.
+- Python package data lives in `src/promptkit_builtin_packs/` and is included via `MANIFEST.in`.
+- Node CLI reads the same pack data from `src/promptkit_builtin_packs/` to stay in sync.

@@ -3,14 +3,14 @@ requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "execplan-installer"
+name = "promptkit"
 version = "0.1.0"
-description = "Tiny CLI to drop AGENTS.md and .agent/PLANS.md ExecPlan scaffolding into a repo"
+description = "Prompt pack manager to install AGENTS snippets and .agent templates (ExecPlan and more)"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
-keywords = ["codex", "execplan", "planning", "agents"]
+keywords = ["codex", "execplan", "planning", "agents", "prompt", "cli"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -18,10 +18,11 @@ classifiers = [
 ]
 
 [project.scripts]
-execplan-install = "execplan_installer.cli:main"
+promptkit = "promptkit.cli:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
