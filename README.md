@@ -2,13 +2,26 @@
 
 A tiny Python CLI that drops the required ExecPlan scaffolding into a repository. It writes/updates `AGENTS.md` with the ExecPlans rule and creates `.agent/PLANS.md` containing the full Codex ExecPlan specification.
 
-## Install locally
+## Quick use with uvx (no install needed)
+
+Run directly from GitHub via Astral's `uvx` launcher (isolated, cached venv per command):
+
+```
+uvx --from git+https://github.com/mikewong23571/execplan-installer.git execplan-install
+```
+
+Examples:
+
+- Target another repo root: `uvx --from git+https://github.com/mikewong23571/execplan-installer.git execplan-install -p /path/to/repo`
+- Overwrite an existing `.agent/PLANS.md`: add `--force`.
+
+## Install locally (optional)
 
 ```
 pip install .
 ```
 
-Or use pipx to keep it isolated:
+Or keep it isolated with pipx:
 
 ```
 pipx install .
@@ -40,4 +53,3 @@ The command is idempotent: it appends the ExecPlans section to `AGENTS.md` only 
   ````
 
 - `.agent/PLANS.md` is populated with the full ExecPlan specification so a novice contributor can read it and create living plans immediately.
-
