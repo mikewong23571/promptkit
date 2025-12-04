@@ -1,18 +1,19 @@
-# promptkit
+# promptkitx
 
 Prompt pack manager that drops AGENTS snippets and `.agent` templates into a repo. Ships with the ExecPlan pack and is ready to host more packs later.
 
 ## Quick use (no install)
 
-- Python/uvx: `uvx --from git+https://github.com/mikewong23571/promptkit.git promptkit install execplan`
-- Node/npx: `npx promptkit install execplan`
+- Python/uvx (PyPI): `uvx promptkitx install execplan`
+- Python/uvx (from GitHub tip): `uvx --from git+https://github.com/mikewong23571/promptkit.git promptkit install execplan`
+- Node/npx: `npx promptkitx install execplan`
 
 Both commands are idempotent and cache their envs. Add `-p /path/to/repo` to target another repo and `--force` to overwrite existing files.
 
 ## Install (optional)
 
-- Python: `pip install promptkit` or `pipx install promptkit`
-- Node: `npm install -g promptkit` (or use `npx` per above)
+- Python: `pip install promptkitx` or `pipx install promptkitx`
+- Node: `npm install -g promptkitx` (or use `npx` per above)
 
 ## Commands (Python & Node CLIs)
 

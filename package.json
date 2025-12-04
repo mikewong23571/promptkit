@@ -1,9 +1,10 @@
 {
-  "name": "promptkit",
-  "version": "0.1.0",
+  "name": "promptkitx",
+  "version": "0.1.1",
   "description": "Prompt pack manager CLI (AGENTS snippets + .agent templates)",
   "bin": {
-    "promptkit": "bin/promptkit.js"
+    "promptkit": "bin/promptkit.js",
+    "promptkitx": "bin/promptkit.js"
   },
   "files": [
     "bin",

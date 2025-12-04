@@ -3,8 +3,8 @@ requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "promptkit"
-version = "0.1.0"
+name = "promptkitx"
+version = "0.1.1"
 description = "Prompt pack manager to install AGENTS snippets and .agent templates (ExecPlan and more)"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 readme = "README.md"
@@ -13,12 +13,12 @@ license = "MIT"
 keywords = ["codex", "execplan", "planning", "agents", "prompt", "cli"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 
 [project.scripts]
 promptkit = "promptkit.cli:main"
+promptkitx = "promptkit.cli:main"
 
 [project.optional-dependencies]
 dev = [
