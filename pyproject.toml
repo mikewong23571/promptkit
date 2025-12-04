@@ -6,19 +6,30 @@ build-backend = "setuptools.build_meta"
 name = "promptkitx"
 version = "0.1.1"
 description = "Prompt pack manager to install AGENTS snippets and .agent templates (ExecPlan and more)"
-authors = [{ name = "Your Name", email = "you@example.com" }]
+authors = [{ name = "Mike Wong", email = "mikewong23571@users.noreply.github.com" }]
 readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
 keywords = ["codex", "execplan", "planning", "agents", "prompt", "cli"]
 classifiers = [
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Intended Audience :: Developers",
     "Operating System :: OS Independent",
 ]
 
 [project.scripts]
 promptkit = "promptkit.cli:main"
 promptkitx = "promptkit.cli:main"
+urls = {
+    Homepage = "https://github.com/mikewong23571/promptkit",
+    "Bug Tracker" = "https://github.com/mikewong23571/promptkit/issues",
+    "Source Code" = "https://github.com/mikewong23571/promptkit",
+}
 
 [project.optional-dependencies]
 dev = [
@@ -30,6 +41,7 @@ dev = [
 [tool.setuptools]
 package-dir = {"" = "src"}
 include-package-data = true
+license-files = ["LICENSE"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

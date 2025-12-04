@@ -8,11 +8,12 @@
   },
   "files": [
     "bin",
-    "src/promptkit_builtin_packs"
+    "src/promptkit_builtin_packs",
+    "!**/__pycache__"
   ],
   "license": "MIT",
-  "keywords": ["prompt", "agents", "execplan", "cli"],
-  "author": "Your Name",
+  "keywords": ["prompt", "agents", "execplan", "cli", "uvx", "npx"],
+  "author": "Mike Wong <mikewong23571@users.noreply.github.com> (https://github.com/mikewong23571)",
   "engines": {
     "node": ">=14"
   },
@@ -20,6 +21,14 @@
     "eslint": "^9.13.0",
     "prettier": "^3.3.3"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikewong23571/promptkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mikewong23571/promptkit/issues"
+  },
+  "homepage": "https://github.com/mikewong23571/promptkit#readme",
   "scripts": {
     "lint": "eslint bin/promptkit.js",
     "format": "prettier -w bin/promptkit.js",

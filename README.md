@@ -1,6 +1,6 @@
 # promptkitx
 
-Prompt pack manager that drops AGENTS snippets and `.agent` templates into a repo. Ships with the ExecPlan pack and is ready to host more packs later.
+Prompt pack manager that drops AGENTS snippets and `.agent` templates into a repo. Ships with the ExecPlan pack and is ready to host more packs later. PyPI: `promptkitx` · npm: `promptkitx`.
 
 ## Quick use (no install)
 
