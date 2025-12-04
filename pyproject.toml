@@ -9,7 +9,7 @@ description = "Prompt pack manager to install AGENTS snippets and .agent templat
 authors = [{ name = "Your Name", email = "you@example.com" }]
 readme = "README.md"
 requires-python = ">=3.9"
-license = {text = "MIT"}
+license = "MIT"
 keywords = ["codex", "execplan", "planning", "agents", "prompt", "cli"]
 classifiers = [
     "Programming Language :: Python :: 3",
