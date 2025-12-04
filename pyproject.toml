@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "promptkitx"
-version = "0.1.1"
+version = "0.1.2"
 description = "Prompt pack manager to install AGENTS snippets and .agent templates (ExecPlan and more)"
 authors = [{ name = "Mike Wong", email = "mikewong23571@users.noreply.github.com" }]
 readme = "README.md"
@@ -25,11 +25,11 @@ classifiers = [
 [project.scripts]
 promptkit = "promptkit.cli:main"
 promptkitx = "promptkit.cli:main"
-urls = {
-    Homepage = "https://github.com/mikewong23571/promptkit",
-    "Bug Tracker" = "https://github.com/mikewong23571/promptkit/issues",
-    "Source Code" = "https://github.com/mikewong23571/promptkit",
-}
+
+[project.urls]
+Homepage = "https://github.com/mikewong23571/promptkit"
+"Bug Tracker" = "https://github.com/mikewong23571/promptkit/issues"
+"Source Code" = "https://github.com/mikewong23571/promptkit"
 
 [project.optional-dependencies]
 dev = [
