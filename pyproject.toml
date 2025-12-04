@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Prompt pack manager to install AGENTS snippets and .agent templates (ExecPlan and more)"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 license = {text = "MIT"}
 keywords = ["codex", "execplan", "planning", "agents", "prompt", "cli"]
 classifiers = [
@@ -36,7 +36,7 @@ where = ["src"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py38"
+target-version = "py39"
 select = ["E", "F", "I", "B", "UP"]
 ignore = ["E203"]
 
@@ -45,10 +45,10 @@ known-first-party = ["promptkit", "promptkit_builtin_packs"]
 
 [tool.black]
 line-length = 100
-target-version = ["py38"]
+target-version = ["py39"]
 
 [tool.mypy]
-python_version = "3.8"
+python_version = "3.9"
 check_untyped_defs = true
 disallow_untyped_defs = true
 ignore_missing_imports = true
